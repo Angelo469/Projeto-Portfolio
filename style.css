@@ -1,44 +1,256 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #000000; color: #ffffff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.eyebrow { font-size: 11px; font-weight: 400; letter-spacing: 5px; color: #888888; text-transform: uppercase; margin-bottom: 15px; display: block; }
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
 
-.content-overlay h1 { font-family: 'Beau Rivage', cursive; font-size: 96px; padding: 0 20px; }
+.eyebrow {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    color: #888888;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.content-overlay h1 {
+    font-family: 'Beau Rivage', cursive;
+    font-size: 96px;
+    padding: 0 20px;
+}
 
 .animar-nome {
-    opacity: 0; display: inline-block;
+    opacity: 0;
+    display: inline-block;
     background: linear-gradient(to right, #ffffff 20%, #666666 40%, #666666 60%, #ffffff 80%);
-    background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: revelarNome 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards, brilhoPremium 5s linear infinite;
 }
 
-header { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: rgba(0, 0, 0, 0.85); z-index: 1000; border-bottom: 1px solid #222; }
-header .logo { font-size: 20px; font-weight: 900; letter-spacing: 4px; }
-header nav a { color: #ffffff; text-decoration: none; font-size: 12px; letter-spacing: 2px; margin-left: 30px; transition: opacity 0.3s; }
-
-.secao-home { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
-
-.btn-bugatti {
-    display: inline-block; color: #ffffff; text-decoration: none; font-size: 12px; letter-spacing: 2px; border: 1px solid #ffffff; padding: 12px 30px; border-radius: 30px; margin-top: 20px;
-    animation: pulse 2s infinite ease-in-out;
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
-.secao-sobre { padding: 100px 20px; text-align: center; display: flex; justify-content: center; }
-.sobre-conteudo { max-width: 700px; }
-.sobre-conteudo h3 { font-size: 22px; font-weight: 300; line-height: 1.6; color: #cccccc; }
+header .logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
 
-.secao-projetos-grid { height: 100vh; display: flex; width: 100%; }
-.card-projeto { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; text-decoration: none; color: #ffffff; }
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-left: 30px;
+    transition: opacity 0.3s, color 0.3s;
+}
 
-@keyframes revelarNome { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes brilhoPremium { to { background-position: 200% center; } }
+header nav a:hover {
+    color: #888888;
+}
+
+.secao-home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-bugatti {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border: 1px solid #ffffff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    margin-top: 20px;
+    animation: pulse 2s infinite ease-in-out;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-bugatti:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.secao-sobre {
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-conteudo {
+    max-width: 700px;
+}
+
+.sobre-conteudo h3 {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* ===================================================
+   CARDS DE PROJETOS - HOVER SMOOTH REPARADO
+   =================================================== */
+.secao-projetos-grid {
+    min-height: 80vh;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    padding: 40px;
+}
+
+.card-projeto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #222222;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+
+    /* EFEITO SMOOTH / TRANSIÇÃO FLUIDA */
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    border-color 0.5s ease,
+    box-shadow 0.5s ease,
+    background-color 0.5s ease;
+    will-change: transform;
+}
+
+/* O Zoom / Levantada do Mouse */
+.card-projeto:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #555555;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card-projeto h3 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.card-projeto p {
+    font-size: 13px;
+    color: #888888;
+    line-height: 1.5;
+}
+
+/* ===================================================
+   SEÇÃO DE CONTATOS (ESTILO PREMIUM / MINIMALISTA)
+   =================================================== */
+.secao-contato {
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 1px solid #111111;
+    background: #000000;
+}
+
+.secao-contato h2 {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.secao-contato p {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 40px;
+}
+
+.contatos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-contato {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #333333;
+    padding: 14px 28px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.01);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-contato:hover {
+    border-color: #ffffff;
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ===================================================
+   KEYFRAMES & ANIMAÇÕES
+   =================================================== */
+@keyframes revelarNome {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes brilhoPremium {
+    to { background-position: 200% center; }
+}
+
 @keyframes pulse {
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255, 0.4); }
-    50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255,255,255, 0); }
+    50% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(255,255,255, 0); }
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255, 0); }
 }
 
+/* Scroll Animation Ajustada (Sem travar o Hover) */
 @supports (animation-range: entry) {
-    .card-projeto { animation: fade-in-on-scroll linear both; animation-timeline: view(); animation-range: entry 5% contain 28%; }
-    @keyframes fade-in-on-scroll { from { opacity: 0; filter: blur(20px); transform: scale(0.94); } to { opacity: 1; filter: blur(0px); transform: scale(1); } }
+    .card-projeto {
+        animation: fade-in-on-scroll linear both;
+        animation-timeline: view();
+        animation-range: entry 5% contain 25%;
+    }
+    @keyframes fade-in-on-scroll {
+        from { opacity: 0; filter: blur(10px); }
+        to { opacity: 1; filter: blur(0px); }
+    }
 }

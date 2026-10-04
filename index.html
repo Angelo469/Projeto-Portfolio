@@ -15,6 +15,8 @@
     <div class="logo">ANGELO</div>
     <nav>
         <a href="#home">HOME</a>
+        <a href="#container-projetos">PROJETOS</a>
+        <a href="#contato">CONTATO</a>
     </nav>
 </header>
 
@@ -49,6 +51,28 @@
     </a>
 </section>
 
+<!-- SEÇÃO DE CONTATOS -->
+<section id="contato" class="secao-contato">
+    <span class="eyebrow">CONEXÃO</span>
+    <h2>VAMOS CONVERSAR?</h2>
+    <p>Estou disponível para novas oportunidades de estágio e projetos backend.</p>
+
+    <div class="contatos-grid">
+        <a href="https://github.com/Angelo469" target="_blank" class="btn-contato">
+            GitHub
+        </a>
+        <a href="https://linkedin.com/in/SEU-PERFIL-AQUI" target="_blank" class="btn-contato">
+            LinkedIn
+        </a>
+        <a href="mailto:seuemail@gmail.com" class="btn-contato">
+            E-mail
+        </a>
+        <a href="https://wa.me/5575999999999" target="_blank" class="btn-contato">
+            WhatsApp
+        </a>
+    </div>
+</section>
+
 <footer>
     <p>© 2026 Angelo. Desenvolvido com foco e disciplina.</p>
 </footer>
@@ -67,7 +91,6 @@
     }
     requestAnimationFrame(raf);
 
-
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -78,6 +101,5 @@
         });
     });
 </script>
-
 </body>
 </html>
