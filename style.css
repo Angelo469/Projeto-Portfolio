@@ -22,7 +22,7 @@ body {
 }
 
 /* ===================================================
-   ANIMAÇÃO DO NOME
+   ANIMAÇÃO DO NOME (SEM CORTE NAS LATERAIS)
    =================================================== */
 .content-overlay h1 {
     font-family: 'Beau Rivage', cursive;
@@ -114,29 +114,11 @@ header nav a:hover {
     color: #000000;
 }
 
-.secao-sobre {
-    padding: 100px 20px 40px 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.sobre-conteudo {
-    max-width: 700px;
-}
-
-.sobre-conteudo h3 {
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 1.6;
-    color: #cccccc;
-}
-
 /* ===================================================
-   SEÇÃO TECH STACK & ARQUITETURA (INTEGRADA)
+   SEÇÃO TECH STACK & ARQUITETURA
    =================================================== */
 .secao-techstack {
-    padding: 100px 20px 80px 20px;
+    padding: 120px 20px 80px 20px;
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
@@ -264,7 +246,7 @@ header nav a:hover {
 }
 
 /* ===================================================
-   SEÇÃO DE CONTATOS (ESTILO MINIMALISTA)
+   SEÇÃO DE CONTATOS
    =================================================== */
 .secao-contato {
     padding: 100px 40px 40px 40px;
