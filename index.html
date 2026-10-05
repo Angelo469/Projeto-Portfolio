@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANGELO // PORTFOLIO</title>
-    <link rel="stylesheet" href="style.css?v=2.1">
+    <link rel="stylesheet" href="style.css?v=3.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -84,15 +84,55 @@
 </section>
 
 <section id="contato" class="secao-contato">
-    <span class="eyebrow">CONEXÃO</span>
-    <h2>VAMOS CONVERSAR?</h2>
-    <p>Estou disponível para novas oportunidades de estágio e projetos backend.</p>
+    <div class="contato-container">
+        <!-- Lado Esquerdo: Informações Rápidas -->
+        <div class="contato-info">
+            <div class="info-bloco">
+                <span class="eyebrow">FOCO ATUAL</span>
+                <p>Java Backend<br>& Sistemas Web</p>
+            </div>
 
-    <div class="contatos-grid">
-        <a href="https://github.com/Angelo469" target="_blank" class="btn-contato">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" class="btn-contato">LinkedIn</a>
-        <a href="mailto:angeloteixeira336@gmail.com" class="btn-contato">E-mail</a>
-        <a href="https://wa.me/5575983469053" target="_blank" class="btn-contato">WhatsApp</a>
+            <div class="info-divisor"></div>
+
+            <div class="info-bloco">
+                <span class="eyebrow">LOCALIZAÇÃO</span>
+                <p>Santo Amaro - BA</p>
+            </div>
+
+            <div class="info-divisor"></div>
+
+            <div class="info-bloco">
+                <span class="eyebrow">DISPONÍVEL PARA</span>
+                <p>Vagas / Estágio (Remoto)</p>
+            </div>
+        </div>
+
+        <!-- Lado Direito: Formulário de Mensagem -->
+        <div class="contato-form-wrapper">
+            <form action="https://formsubmit.co/angeloteixeira336@gmail.com" method="POST" class="contato-form">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                </div>
+
+                <textarea name="message" rows="4" placeholder="Mensagem" required></textarea>
+
+                <button type="submit" class="btn-enviar">ENVIAR &rarr;</button>
+            </form>
+
+            <div class="contatos-links-diretos">
+                <a href="https://github.com/Angelo469" target="_blank" class="btn-contato">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" class="btn-contato">LinkedIn</a>
+                <a href="https://wa.me/5575983469053" target="_blank" class="btn-contato">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <a href="#home" class="btn-back-to-top">&mdash; BACK TO TOP &uarr;</a>
     </div>
 </section>
 
